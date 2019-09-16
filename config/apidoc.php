@@ -31,7 +31,7 @@ return [
         /*
          * The name for the exported Postman collection. Default: config('app.name')." API"
          */
-        'name' => null,
+        'name' => 'API',
 
         /*
          * The description for the exported Postman collection.
