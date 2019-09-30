@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb282a46-5339-4ea4-8aa3-2f5ac8b63e2e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/OrganizationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/OrganizationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laradock" beforeDir="false" afterPath="$PROJECT_DIR$/laradock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laradock/nginx/sites/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/laradock/nginx/sites/default.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
@@ -51,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="380">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -365,12 +364,12 @@
       <workItem from="1568617848646" duration="3064000" />
       <workItem from="1568639277015" duration="4766000" />
       <workItem from="1568646136359" duration="1490000" />
-      <workItem from="1569761107764" duration="4682000" />
+      <workItem from="1569761107764" duration="4747000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16398000" />
+    <option name="totallyTimeSpent" value="16463000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -607,8 +606,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        <state relative-caret-position="380">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
