@@ -9,10 +9,11 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ext-json": "^1.7",
         "fideloper/proxy": "^4.0",
         "flugger/laravel-responder": "^3.0",
         "laravel/framework": "^6.0",
-        "laravel/passport": "^7.4",
+        "laravel/passport": "^7.5",
         "laravel/tinker": "^1.0",
         "league/fractal": "^0.17.0",
         "spatie/laravel-fractal": "^5.6",
