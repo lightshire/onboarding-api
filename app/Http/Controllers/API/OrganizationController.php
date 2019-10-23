@@ -17,11 +17,11 @@ class OrganizationController extends Controller
      * @transformer \App\Transformers\OrganizationTransformer
      * @transformerModel \App\Organization
      *
-     * @param $id
+     * @param $org
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getOrganization($id)
+    public function getOrganization($org)
     {
-        return responder()->success(Organization::find($id))->respond();
+        return responder()->success(Organization::where('code', $org)->first())->respond();
     }
 }

@@ -16,6 +16,6 @@ use Illuminate\Http\Request;
 Route::get('/organization/{id}', 'API\OrganizationController@getOrganization');
 
 Route::middleware('auth:api')->group(function () {
-
+    Route::get('/user', 'API\UserController@getUser');
 });
 
