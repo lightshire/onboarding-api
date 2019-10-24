@@ -31,4 +31,9 @@ class Organization extends Model
         'description',
         'code'
     ];
+
+    public function checklists()
+    {
+        return $this->hasMany(ChecklistItem::class);
+    }
 }

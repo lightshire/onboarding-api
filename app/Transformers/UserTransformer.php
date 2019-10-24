@@ -2,10 +2,10 @@
 
 namespace App\Transformers;
 
-use App\Organization;
+use App\User;
 use Flugg\Responder\Transformers\Transformer;
 
-class OrganizationTransformer extends Transformer
+class UserTransformer extends Transformer
 {
     /**
      * List of available relations.
@@ -24,13 +24,13 @@ class OrganizationTransformer extends Transformer
     /**
      * Transform the model.
      *
-     * @param  \App\Organization $organization
+     * @param  \App\User $user
      * @return array
      */
-    public function transform(Organization $organization)
+    public function transform(User $user)
     {
         return [
-            'id' => (int) $organization->id,
+            'id' => (int) $user->id,
         ];
     }
 }

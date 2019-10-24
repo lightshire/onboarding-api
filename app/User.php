@@ -49,7 +49,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'organization_id'
+        'name', 'email', 'password', 'organization_id', 'hr_id', 'type'
     ];
 
     /**
@@ -69,4 +69,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class);
+    }
+
+    public function checklists()
+    {
+        return $this->hasMany(UserChecklist::class);
+    }
+
+    public function activeChecklists()
+    {
+        return $this->checklists()->where('is_completed', false);
+    }
+
 }

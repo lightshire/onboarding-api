@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 6.0.3 on 2019-10-08 13:59:58.
+ * Generated for Laravel 6.3.0 on 2019-10-23 02:17:35.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1792,6 +1792,18 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Auth\AuthManager $instance */
                         return $instance->provider($name, $callback);
+        }
+        
+        /**
+         * Determines if any guards have already been resolved.
+         *
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasResolvedGuards()
+        {
+                        /** @var \Illuminate\Auth\AuthManager $instance */
+                        return $instance->hasResolvedGuards();
         }
         
         /**
@@ -6497,6 +6509,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * 
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getChannels()
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        return $instance->getChannels();
+        }
+        
+        /**
          * Get the default log driver name.
          *
          * @return string 
@@ -6533,6 +6557,19 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Log\LogManager $instance */
                         return $instance->extend($driver, $callback);
+        }
+        
+        /**
+         * Unset the given channel instance.
+         *
+         * @param string|null $name
+         * @return \Illuminate\Log\LogManager 
+         * @static 
+         */ 
+        public static function forgetChannel($driver = null)
+        {
+                        /** @var \Illuminate\Log\LogManager $instance */
+                        return $instance->forgetChannel($driver);
         }
         
         /**
@@ -11366,6 +11403,18 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
+         * Register the typical confirm password routes for an application.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function confirmPassword()
+        {
+                        /** @var \Illuminate\Routing\Router $instance */
+                        $instance->confirmPassword();
+        }
+        
+        /**
          * Register the typical email verification routes for an application.
          *
          * @return void 
@@ -12889,7 +12938,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param string $path
          * @return resource|null The path resource or null on failure.
-         * @throws FileNotFoundException
+         * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
          * @static 
          */ 
         public static function readStream($path)
@@ -12906,7 +12955,7 @@ namespace Illuminate\Support\Facades {
          * @param array $options
          * @return bool 
          * @throws \InvalidArgumentException If $resource is not a file handle.
-         * @throws FileExistsException
+         * @throws \Illuminate\Contracts\Filesystem\FileExistsException
          * @static 
          */ 
         public static function writeStream($path, $resource, $options = array())
@@ -13225,6 +13274,33 @@ namespace Illuminate\Support\Facades {
         {
                         /** @var \Illuminate\Routing\UrlGenerator $instance */
                         return $instance->hasValidSignature($request, $absolute);
+        }
+        
+        /**
+         * Determine if the signature from the given request matches the URL.
+         *
+         * @param \Illuminate\Http\Request $request
+         * @param bool $absolute
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasCorrectSignature($request, $absolute = true)
+        {
+                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+                        return $instance->hasCorrectSignature($request, $absolute);
+        }
+        
+        /**
+         * Determine if the expires timestamp from the given request is not from the past.
+         *
+         * @param \Illuminate\Http\Request $request
+         * @return bool 
+         * @static 
+         */ 
+        public static function signatureHasNotExpired($request)
+        {
+                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+                        return $instance->signatureHasNotExpired($request);
         }
         
         /**
@@ -14699,6 +14775,17 @@ namespace Facade\Ignition\Facades {
          *
          * @static 
          */ 
+        public static function reportMessage($message, $logLevel, $callback = null)
+        {
+                        /** @var \Facade\FlareClient\Flare $instance */
+                        return $instance->reportMessage($message, $logLevel, $callback);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
         public static function sendTestReport($throwable)
         {
                         /** @var \Facade\FlareClient\Flare $instance */
@@ -14736,6 +14823,17 @@ namespace Facade\Ignition\Facades {
         {
                         /** @var \Facade\FlareClient\Flare $instance */
                         return $instance->createReport($throwable);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function createReportFromMessage($message, $logLevel)
+        {
+                        /** @var \Facade\FlareClient\Flare $instance */
+                        return $instance->createReportFromMessage($message, $logLevel);
         }
         
         /**
@@ -14836,388 +14934,6 @@ namespace Flugg\Responder\Facades {
         {
                         /** @var \Flugg\Responder\Responder $instance */
                         return $instance->error($errorCode, $message);
-        }
-         
-    }
- 
-}
-
-namespace Spatie\Fractal { 
-
-    /**
-     * 
-     *
-     * @see \Spatie\Fractal\Fractal
-     */ 
-    class FractalFacade {
-        
-        /**
-         * 
-         *
-         * @param null|mixed $data
-         * @param null|callable|\League\Fractal\TransformerAbstract $transformer
-         * @param null|\League\Fractal\Serializer\SerializerAbstract $serializer
-         * @return \Spatie\Fractalistic\Fractal 
-         * @static 
-         */ 
-        public static function create($data = null, $transformer = null, $serializer = null)
-        {
-                        return \Spatie\Fractal\Fractal::create($data, $transformer, $serializer);
-        }
-        
-        /**
-         * Return a new JSON response.
-         *
-         * @param callable|int $statusCode
-         * @param callable|array $headers
-         * @param callable|int $options
-         * @return \Illuminate\Http\JsonResponse 
-         * @static 
-         */ 
-        public static function respond($statusCode = 200, $headers = array(), $options = 0)
-        {
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->respond($statusCode, $headers, $options);
-        }
-        
-        /**
-         * Set the collection data that must be transformed.
-         *
-         * @param mixed $data
-         * @param null|string|callable|\League\Fractal\TransformerAbstract $transformer
-         * @param null|string $resourceName
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function collection($data, $transformer = null, $resourceName = null)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->collection($data, $transformer, $resourceName);
-        }
-        
-        /**
-         * Set the item data that must be transformed.
-         *
-         * @param mixed $data
-         * @param null|string|callable|\League\Fractal\TransformerAbstract $transformer
-         * @param null|string $resourceName
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function item($data, $transformer = null, $resourceName = null)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->item($data, $transformer, $resourceName);
-        }
-        
-        /**
-         * Set the primitive data that must be transformed.
-         *
-         * @param mixed $data
-         * @param null|string|callable|\League\Fractal\TransformerAbstract $transformer
-         * @param null|string $resourceName
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function primitive($data, $transformer = null, $resourceName = null)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->primitive($data, $transformer, $resourceName);
-        }
-        
-        /**
-         * Set the data that must be transformed.
-         *
-         * @param string $dataType
-         * @param mixed $data
-         * @param null|string|callable|\League\Fractal\TransformerAbstract $transformer
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function data($dataType, $data, $transformer = null)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->data($dataType, $data, $transformer);
-        }
-        
-        /**
-         * Set the class or function that will perform the transform.
-         *
-         * @param string|callable|\League\Fractal\TransformerAbstract $transformer
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function transformWith($transformer)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->transformWith($transformer);
-        }
-        
-        /**
-         * Set the serializer to be used.
-         *
-         * @param string|\League\Fractal\Serializer\SerializerAbstract $serializer
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function serializeWith($serializer)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->serializeWith($serializer);
-        }
-        
-        /**
-         * Set a Fractal paginator for the data.
-         *
-         * @param \League\Fractal\Pagination\PaginatorInterface $paginator
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function paginateWith($paginator)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->paginateWith($paginator);
-        }
-        
-        /**
-         * Set a Fractal cursor for the data.
-         *
-         * @param \League\Fractal\Pagination\CursorInterface $cursor
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function withCursor($cursor)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->withCursor($cursor);
-        }
-        
-        /**
-         * Specify the includes.
-         *
-         * @param array|string $includes Array or string of resources to include.
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function parseIncludes($includes)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->parseIncludes($includes);
-        }
-        
-        /**
-         * Specify the excludes.
-         *
-         * @param array|string $excludes Array or string of resources to exclude.
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function parseExcludes($excludes)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->parseExcludes($excludes);
-        }
-        
-        /**
-         * Specify the fieldsets to include in the response.
-         *
-         * @param array $fieldsets array with key = resourceName and value = fields to include
-         *                                (array or comma separated string with field names)
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function parseFieldsets($fieldsets)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->parseFieldsets($fieldsets);
-        }
-        
-        /**
-         * Set the meta data.
-         *
-         * @param $array,...
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function addMeta()
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->addMeta();
-        }
-        
-        /**
-         * Set the resource name, to replace 'data' as the root of the collection or item.
-         *
-         * @param string $resourceName
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function withResourceName($resourceName)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->withResourceName($resourceName);
-        }
-        
-        /**
-         * Upper limit to how many levels of included data are allowed.
-         *
-         * @param int $recursionLimit
-         * @return \Spatie\Fractal\Fractal 
-         * @static 
-         */ 
-        public static function limitRecursion($recursionLimit)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->limitRecursion($recursionLimit);
-        }
-        
-        /**
-         * Perform the transformation to json.
-         *
-         * @param int $options
-         * @return string 
-         * @static 
-         */ 
-        public static function toJson($options = 0)
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->toJson($options);
-        }
-        
-        /**
-         * Perform the transformation to array.
-         *
-         * @return array 
-         * @static 
-         */ 
-        public static function toArray()
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->toArray();
-        }
-        
-        /**
-         * Create fractal data.
-         *
-         * @return \League\Fractal\Scope 
-         * @throws \Spatie\Fractalistic\Exceptions\InvalidTransformation
-         * @throws \Spatie\Fractalistic\Exceptions\NoTransformerSpecified
-         * @static 
-         */ 
-        public static function createData()
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->createData();
-        }
-        
-        /**
-         * Get the resource.
-         *
-         * @return \League\Fractal\Resource\ResourceInterface 
-         * @throws \Spatie\Fractalistic\Exceptions\InvalidTransformation
-         * @static 
-         */ 
-        public static function getResource()
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->getResource();
-        }
-        
-        /**
-         * Return the name of the resource.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getResourceName()
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->getResourceName();
-        }
-        
-        /**
-         * Convert the object into something JSON serializable.
-         *
-         * @static 
-         */ 
-        public static function jsonSerialize()
-        {
-            //Method inherited from \Spatie\Fractalistic\Fractal            
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->jsonSerialize();
-        }
-        
-        /**
-         * Register a custom macro.
-         *
-         * @param string $name
-         * @param object|callable $macro
-         * @return void 
-         * @static 
-         */ 
-        public static function macro($name, $macro)
-        {
-                        \Spatie\Fractal\Fractal::macro($name, $macro);
-        }
-        
-        /**
-         * Mix another object into the class.
-         *
-         * @param object $mixin
-         * @param bool $replace
-         * @return void 
-         * @throws \ReflectionException
-         * @static 
-         */ 
-        public static function mixin($mixin, $replace = true)
-        {
-                        \Spatie\Fractal\Fractal::mixin($mixin, $replace);
-        }
-        
-        /**
-         * Checks if macro is registered.
-         *
-         * @param string $name
-         * @return bool 
-         * @static 
-         */ 
-        public static function hasMacro($name)
-        {
-                        return \Spatie\Fractal\Fractal::hasMacro($name);
-        }
-        
-        /**
-         * Dynamically handle calls to the class.
-         *
-         * @param string $method
-         * @param array $parameters
-         * @return mixed 
-         * @throws \BadMethodCallException
-         * @static 
-         */ 
-        public static function macroCall($method, $parameters)
-        {
-                        /** @var \Spatie\Fractal\Fractal $instance */
-                        return $instance->macroCall($method, $parameters);
         }
          
     }
@@ -15853,6 +15569,43 @@ namespace  {
             {
                                 /** @var \Illuminate\Database\Eloquent\Builder $instance */
                                 return $instance->getMacro($name);
+            }
+         
+            /**
+             * Checks if a macro is registered.
+             *
+             * @param string $name
+             * @return bool 
+             * @static 
+             */ 
+            public static function hasMacro($name)
+            {
+                                /** @var \Illuminate\Database\Eloquent\Builder $instance */
+                                return $instance->hasMacro($name);
+            }
+         
+            /**
+             * Get the given global macro by name.
+             *
+             * @param string $name
+             * @return \Closure 
+             * @static 
+             */ 
+            public static function getGlobalMacro($name)
+            {
+                                return \Illuminate\Database\Eloquent\Builder::getGlobalMacro($name);
+            }
+         
+            /**
+             * Checks if a global macro is registered.
+             *
+             * @param string $name
+             * @return bool 
+             * @static 
+             */ 
+            public static function hasGlobalMacro($name)
+            {
+                                return \Illuminate\Database\Eloquent\Builder::hasGlobalMacro($name);
             }
          
             /**
@@ -16735,15 +16488,15 @@ namespace  {
             /**
              * Add a "where not null" clause to the query.
              *
-             * @param string $column
+             * @param string|array $columns
              * @param string $boolean
              * @return \Illuminate\Database\Query\Builder|static 
              * @static 
              */ 
-            public static function whereNotNull($column, $boolean = 'and')
+            public static function whereNotNull($columns, $boolean = 'and')
             {
                                 /** @var \Illuminate\Database\Query\Builder $instance */
-                                return $instance->whereNotNull($column, $boolean);
+                                return $instance->whereNotNull($columns, $boolean);
             }
          
             /**
@@ -17966,18 +17719,6 @@ namespace  {
             }
          
             /**
-             * Checks if macro is registered.
-             *
-             * @param string $name
-             * @return bool 
-             * @static 
-             */ 
-            public static function hasMacro($name)
-            {
-                                return \Illuminate\Database\Query\Builder::hasMacro($name);
-            }
-         
-            /**
              * Dynamically handle calls to the class.
              *
              * @param string $method
@@ -18038,8 +17779,6 @@ namespace  {
     class Flare extends \Facade\Ignition\Facades\Flare {}
 
     class Responder extends \Flugg\Responder\Facades\Responder {}
-
-    class Fractal extends \Spatie\Fractal\FractalFacade {}
  
 }
 
